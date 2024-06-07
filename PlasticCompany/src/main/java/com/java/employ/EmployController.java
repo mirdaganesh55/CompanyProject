@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -31,15 +32,26 @@ public class EmployController {
     
 
 	//Check Conditions
-	public String addValidConditions(Employ employ) throws IOException {
-		if(addValid(employ)) {
-			return employeDao.saveEmpDetailsDao(employ);
+	public String addValidConditions(Employ employ,EmpLogin empLogin) throws IOException {
+		if(addValid(employ,empLogin)) {
+			return employeDao.saveEmpDetailsDao(employ,empLogin);
 		}
 		return "";
 	}
-	public boolean addValid(Employ employ) {
+	public void empLogin(EmpLogin login) {
+		employeDao.empLoginDao(login);
+	}
+	public boolean addValid(Employ employ,EmpLogin empLogin) {
 		FacesContext context = FacesContext.getCurrentInstance();
+		String userName = "^[^\\s]{8,16}$";
+
 		boolean flag = true;
+		
+		if (!Pattern.matches(userName, empLogin.getUsername())) {
+			context.addMessage("form:username", new FacesMessage("Username Contains min 8 characters."));
+			flag = false;
+		}
+		
 		if(employ.getFirstName().length() <= 0) {
 			context.addMessage("form:firstName", new FacesMessage("First name is required."));
 			flag = false;

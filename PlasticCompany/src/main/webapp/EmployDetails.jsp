@@ -57,35 +57,42 @@
 
 				<label for="dateOfBirth">Date of Birth</label>
 				<h:inputText id="dateOfBirth" value="#{employe.dateOfBirth}"
-					styleClass="dateOfBirth">
+					styleClass="dateOfBirth" autocomplete="false">
 					<f:convertDateTime pattern="MM/dd/yyyy" />
 				</h:inputText>
 				<span class="message"> <h:message for="dateOfBirth"
 						style="display: block; color: red;margin-top:0rem;" />
 				</span>
 				<br />
-				
-				
 
 				<h:outputLabel for="username">UserName</h:outputLabel>
-				<h:inputText id="username" value="#{employe.username}" />
+				<h:inputText id="username" value="#{emplogin.username}" />
 				<span class="message"> <h:message for="username"
 						style="display: block; color: red; margin-top: 0rem;" />
 				</span>
 				<br />
-				<h:outputLabel for="password">Password</h:outputLabel>
-				<h:inputText id="password" value="#{employe.password}" />
-				<span class="message"> <h:message for="password"
-						style="display: block; color: red; margin-top: 0rem;" />
+
+				<h:outputLabel for="passCode">Password</h:outputLabel>
+				<h:inputSecret id="passCode" value="#{emplogin.password}"
+					onkeyup="checkPasswordStrength(this.value, 'password-strength-message')" />
+				<span class="message"> <h:message for="passCode" />
 				</span>
 				<br />
-				<h:outputLabel for="cfmPassword">Confrim password</h:outputLabel>
-				<h:inputText id="cfmPassword" value="#{employe.cfmPassword}" />
+				<span id="password-strength-message" style="color: black;"></span>
+				<br />
+
+				<h:outputLabel for="cfmPassword">Confirm password</h:outputLabel>
+				<h:inputSecret id="cfmPassword" value="#{employe.cfmPassword}"
+					onkeyup="checkPasswordStrength(this.value, 'cfm-password-strength-message'); checkPasswordMatch('passCode', 'cfmPassword', 'cfm-match-message');" />
 				<span class="message"> <h:message for="cfmPassword"
 						style="display: block; color: red; margin-top: 0rem;" />
 				</span>
 				<br />
-				
+				<span id="cfm-match-message" style="color: red;"></span>
+				<span id="cfm-password-strength-message" style="color: black;"></span>
+				<br />
+
+
 				<h:outputLabel for="email">Email</h:outputLabel>
 				<h:inputText id="email" value="#{employe.email}" />
 				<span class="message"> <h:message for="email"
@@ -107,21 +114,21 @@
 				</span>
 				<br />
 
-
 				<h:outputLabel for="image">Upload your image:</h:outputLabel>
 				<h:inputFile id="image" value="#{employe.file}" />
 				<span class="message"> <h:message for="image"
 						style="display: block; color: red; margin-top: 0rem;" />
 				</span>
-				<br />
-
+		 		<br />
+	
 				<h:commandButton value="Submit"
-					action="#{employeController.addValidConditions(employe)}"
+					action="#{employeController.addValidConditions(employe,emplogin)}"
 					styleClass="ui-input-btn ui-btn ui-mini ui-btn-inline 
             ui-corner-all ui-btn-b" />
 
 			</h:form>
 		</div>
 	</f:view>
+	<script src="EmployDetails.js"></script>
 </body>
 </html>

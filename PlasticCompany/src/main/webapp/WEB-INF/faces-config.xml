@@ -33,7 +33,11 @@
     </managed-property>
 </managed-bean>
 
-
+<managed-bean>
+	<managed-bean-name>emplogin</managed-bean-name>
+    <managed-bean-class>com.java.employ.EmpLogin</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
 
 
 

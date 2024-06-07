@@ -30,12 +30,6 @@
         <property generated="never" lazy="false" name="imgUrl" optimistic-lock="true" type="java.lang.String" unique="false">
             <column name="imgUrl"/>
         </property>
-        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="java.lang.String" unique="false">
-            <column name="username"/>
-        </property>
-        <property generated="never" lazy="false" name="password" optimistic-lock="true" type="java.lang.String" unique="false">
-            <column name="password"/>
-        </property>
         <property generated="never" lazy="false" name="cfmPassword" optimistic-lock="true" type="java.lang.String" unique="false">
             <column name="cfmPassword"/>
         </property>

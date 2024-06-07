@@ -1,9 +1,11 @@
 #empfrom {
-    width: 50%; 
-    margin: 0 auto; 
-    display: 
+	width: 14%;
+	margin: 27px auto;
+	display: inherit;
 }
 
 #form {
-    text-align: center; 
+	text-align: center;
+	    width: 24rem;
+	
 }
