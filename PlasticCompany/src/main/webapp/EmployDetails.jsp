@@ -64,10 +64,31 @@
 						style="display: block; color: red;margin-top:0rem;" />
 				</span>
 				<br />
+				
+				
 
-				<h:outputLabel for="address">Address</h:outputLabel>
-				<h:inputTextarea id="address" value="#{employe.address}" />
-				<span class="message"> <h:message for="address"
+				<h:outputLabel for="username">UserName</h:outputLabel>
+				<h:inputText id="username" value="#{employe.username}" />
+				<span class="message"> <h:message for="username"
+						style="display: block; color: red; margin-top: 0rem;" />
+				</span>
+				<br />
+				<h:outputLabel for="password">Password</h:outputLabel>
+				<h:inputText id="password" value="#{employe.password}" />
+				<span class="message"> <h:message for="password"
+						style="display: block; color: red; margin-top: 0rem;" />
+				</span>
+				<br />
+				<h:outputLabel for="cfmPassword">Confrim password</h:outputLabel>
+				<h:inputText id="cfmPassword" value="#{employe.cfmPassword}" />
+				<span class="message"> <h:message for="cfmPassword"
+						style="display: block; color: red; margin-top: 0rem;" />
+				</span>
+				<br />
+				
+				<h:outputLabel for="email">Email</h:outputLabel>
+				<h:inputText id="email" value="#{employe.email}" />
+				<span class="message"> <h:message for="email"
 						style="display: block; color: red; margin-top: 0rem;" />
 				</span>
 				<br />
@@ -79,12 +100,13 @@
 				</span>
 				<br />
 
-				<h:outputLabel for="email">Email</h:outputLabel>
-				<h:inputText id="email" value="#{employe.email}" />
-				<span class="message"> <h:message for="email"
+				<h:outputLabel for="address">Address</h:outputLabel>
+				<h:inputTextarea id="address" value="#{employe.address}" />
+				<span class="message"> <h:message for="address"
 						style="display: block; color: red; margin-top: 0rem;" />
 				</span>
 				<br />
+
 
 				<h:outputLabel for="image">Upload your image:</h:outputLabel>
 				<h:inputFile id="image" value="#{employe.file}" />

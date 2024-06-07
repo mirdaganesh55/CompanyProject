@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.servlet.http.Part;
 
 public class Employ {
-	private int empId;
+	private String empId;
 	private String firstName;
 	private String lastName;
 	private String gender;
@@ -14,26 +14,32 @@ public class Employ {
 	private String email;
 	private Part file;
 	private String imgUrl;
-
-    public String getImgUrl() {
-		return imgUrl;
+	private String username;
+	private String password;
+	private String cfmPassword;
+	
+	public String getUsername() {
+		return username;
 	}
-
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-
-	public Part getFile() {
-        return file;
-    }
- 
-    public void setFile(Part file) {
-        this.file = file;
-    }
-	public int getEmpId() {
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getCfmPassword() {
+		return cfmPassword;
+	}
+	public void setCfmPassword(String cfmPassword) {
+		this.cfmPassword = cfmPassword;
+	}
+	public String getEmpId() {
 		return empId;
 	}
-	public void setEmpId(int empId) {
+	public void setEmpId(String empId) {
 		this.empId = empId;
 	}
 	public String getFirstName() {
@@ -78,13 +84,26 @@ public class Employ {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public Employ() {
-		super();
+	public Part getFile() {
+		return file;
 	}
-
-	public Employ(int empId, String firstName, String lastName, String gender, Date dateOfBirth, String address,
-			String phoneNumber, String email, Part file, String filePath, String filePathNew) {
+	public void setFile(Part file) {
+		this.file = file;
+	}
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+	@Override
+	public String toString() {
+		return "Employ [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+				+ ", dateOfBirth=" + dateOfBirth + ", address=" + address + ", phoneNumber=" + phoneNumber + ", email="
+				+ email + ", file=" + file + ", imgUrl=" + imgUrl + "]";
+	}
+	public Employ(String empId, String firstName, String lastName, String gender, Date dateOfBirth, String address,
+			String phoneNumber, String email, Part file, String imgUrl) {
 		super();
 		this.empId = empId;
 		this.firstName = firstName;
@@ -95,13 +114,10 @@ public class Employ {
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.file = file;
+		this.imgUrl = imgUrl;
 	}
-
-	@Override
-	public String toString() {
-		return "Employ [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
-				+ ", dateOfBirth=" + dateOfBirth + ", address=" + address + ", phoneNumber=" + phoneNumber + ", email="
-				+ email + ", file=" + file + "]";
+	public Employ() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	
 }

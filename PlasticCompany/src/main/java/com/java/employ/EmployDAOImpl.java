@@ -21,8 +21,21 @@ public class EmployDAOImpl implements EmployDAO {
 	public void setFilePath(String filePath) {
 		this.filePath = filePath;
 	}
+	
+	private static int currentId = 1;
+    public static String generateEmployID() {
+        String prefix = "PCE";
+        String formattedId = String.format("%01d", currentId);
+        String medicalID = prefix + formattedId;
+        currentId++;
+        return medicalID;
+    }
 
+    
+    
 	public String saveEmpDetailsDao(Employ employ) throws IOException {
+		String empId = generateEmployID();
+		employ.setEmpId(empId);
 		upload(employ.getFile());
 		employ.setImgUrl(filePath);
 		SessionFactory sf = SessionHelper.getConnection();

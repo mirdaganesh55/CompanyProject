@@ -2,7 +2,7 @@
 <!-- Generated Jun 6, 2024, 11:20:12 AM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.java.employ.Employ" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="EMPLOY">
-        <id name="empId" type="int">
+        <id name="empId" type="java.lang.String">
             <column name="EMPID"/>
             <generator class="assigned"/>
         </id>
@@ -29,6 +29,15 @@
         </property>
         <property generated="never" lazy="false" name="imgUrl" optimistic-lock="true" type="java.lang.String" unique="false">
             <column name="imgUrl"/>
+        </property>
+        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="username"/>
+        </property>
+        <property generated="never" lazy="false" name="password" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="password"/>
+        </property>
+        <property generated="never" lazy="false" name="cfmPassword" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="cfmPassword"/>
         </property>
     </class>
 </hibernate-mapping>
